@@ -1,0 +1,132 @@
+openapi: 3.0.3
+info:
+  title: Basic Calculator API
+  version: 1.0.0
+  description: This API provides basic arithmetic operations: addition, subtraction, multiplication, and division.
+
+paths:
+  /w:
+    get:
+      summary: Add two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+                    format: float
+                    example: 8.0
+
+  /x:
+    get:
+      summary: Subtract two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+                    format: float
+                    example: 6.0
+
+  /y:
+    get:
+      summary: Multiply two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+                    format: float
+                    example: 12.0
+
+  /z:
+    get:
+      summary: Divide two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+                    format: float
+                    example: 5.0
+        '400':
+          description: Division by zero
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Division by zero is not allowed"
