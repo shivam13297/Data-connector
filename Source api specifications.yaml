@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Basic Calculator API
   version: 1.0.0
-  description: This API provides basic arithmetic operations: addition, subtraction, multiplication, and division.
+  description: This API provides basic arithmetic operations, addition, subtraction, multiplication, and division.
 
 paths:
   /w:
