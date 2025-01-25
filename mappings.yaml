@@ -1,0 +1,28 @@
+mappings:
+  - source_path: /w
+    source_method: get
+    sink_path: /a
+    sink_method: post
+    parameters:
+      a: result  # Maps source result to sink parameter a
+
+  - source_path: /x
+    source_method: get
+    sink_path: /a
+    sink_method: post
+    parameters:
+      a: result  # Maps source result to sink parameter a
+
+  - source_path: /y
+    source_method: get
+    sink_path: /b
+    sink_method: post
+    parameters:
+      b: result  # Maps source result to sink parameter b
+
+  - source_path: /z
+    source_method: get
+    sink_path: /b
+    sink_method: post
+    parameters:
+      b: result  # Maps source result to sink parameter b
