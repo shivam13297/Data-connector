@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: Sink API
+  version: 1.0.0
+  description: API that receives and displays values.
+
+paths:
+  /a:
+    post:
+      summary: Display value a
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: number
+                format: float
+                example: 5.0
+
+  /b:
+    post:
+      summary: Display value b
+      parameters:
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: number
+                format: float
+                example: 3.0
