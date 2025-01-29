@@ -1,0 +1,27 @@
+mappings:
+  - source_path: /pet/findByStatus
+    source_method: get
+    sink_path: /a
+    sink_method: post
+    parameters:
+      a: status
+    source_params:
+      status: available
+
+  - source_path: /pet/findByStatus
+    source_method: get
+    sink_path: /b
+    sink_method: post
+    parameters:
+      b: status
+    source_params:
+      status: pending
+
+  - source_path: /pet/findByStatus
+    source_method: get
+    sink_path: /a
+    sink_method: post
+    parameters:
+      a: status
+    source_params:
+      status: sold
