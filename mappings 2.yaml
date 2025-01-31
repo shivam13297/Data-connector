@@ -1,27 +1,42 @@
 mappings:
-  - source_path: /pet/findByStatus
-    source_method: get
-    sink_path: /a
-    sink_method: post
-    parameters:
-      a: status
+  - source_path: "/pet/findByStatus"
+    source_method: "get"
     source_params:
-      status: available
+      status: "available"
+    sink_path: "/a"
+    sink_method: "post"
+    parameters:
+      id: id
+      name: name
+      category: category
+      photoUrls: photoUrls
+      tags: tags
+      status: status
 
-  - source_path: /pet/findByStatus
-    source_method: get
-    sink_path: /b
-    sink_method: post
-    parameters:
-      b: status
+  - source_path: "/pet/findByStatus"
+    source_method: "get"
     source_params:
-      status: pending
+      status: "pending"
+    sink_path: "/b"
+    sink_method: "post"
+    parameters:
+      id: id
+      name: name
+      category: category
+      photoUrls: photoUrls
+      tags: tags
+      status: status
 
-  - source_path: /pet/findByStatus
-    source_method: get
-    sink_path: /a
-    sink_method: post
-    parameters:
-      a: status
+  - source_path: "/pet/findByStatus"
+    source_method: "get"
     source_params:
-      status: sold
+      status: "sold"
+    sink_path: "/a"
+    sink_method: "post"
+    parameters:
+      id: id
+      name: name
+      category: category
+      photoUrls: photoUrls
+      tags: tags
+      status: status
