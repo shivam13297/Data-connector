@@ -1,0 +1,141 @@
+openapi: 3.0.2
+info:
+  title: Sink API
+  description: API for handling pet data mappings from a source API.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+
+paths:
+  /a:
+    post:
+      summary: Receive pet data at endpoint /a
+      description: Accepts pet data in JSON format and returns it.
+      operationId: receivePetDataA
+      requestBody:
+        description: Pet data payload
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PetData'
+      responses:
+        "200":
+          description: Successfully received pet data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/PetData'
+        "422":
+          description: Validation error (incorrect request format)
+
+  /b:
+    post:
+      summary: Receive pet data at endpoint /b
+      description: Accepts pet data in JSON format and returns it.
+      operationId: receivePetDataB
+      requestBody:
+        description: Pet data payload
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PetData'
+      responses:
+        "200":
+          description: Successfully received pet data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/PetData'
+        "422":
+          description: Validation error (incorrect request format)
+
+  /c:
+    post:
+      summary: Receive pet data at endpoint /c
+      description: Accepts pet data in JSON format and returns it.
+      operationId: receivePetDataC
+      requestBody:
+        description: Pet data payload
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PetData'
+      responses:
+        "200":
+          description: Successfully received pet data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/PetData'
+        "422":
+          description: Validation error (incorrect request format)
+
+components:
+  schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 76
+        name:
+          type: string
+          example: "testCategory"
+
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Cute"
+
+    PetData:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 21015682
+        name:
+          type: string
+          example: "testName"
+        category:
+          $ref: '#/components/schemas/Category'
+        photoUrls:
+          type: array
+          items:
+            type: string
+          example: ["image1.jpg", "image2.jpg"]
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        status:
+          type: string
+          enum:
+            - available
+            - pending
+            - sold
+          example: "available"
