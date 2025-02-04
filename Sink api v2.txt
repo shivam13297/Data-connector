@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Your API Title (e.g., Example API)
+  version: 1.0.0
+  description: A short description of your API (e.g., API for testing string parameters)
+
+paths:
+  /a:
+    post:
+      summary: Endpoint A
+      description: Accepts a string parameter 'a' and returns it.
+      requestBody:
+        content:
+          application/json:  # Or application/x-www-form-urlencoded if that's how you're sending the data
+            schema:
+              type: object
+              properties:
+                a:
+                  type: string
+                  description: The string value for 'a'
+              required:
+                - a
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string  # The response is the string 'a' itself
+  /b:
+    post:
+      summary: Endpoint B
+      description: Accepts a string parameter 'b' and returns it.
+      requestBody:
+        content:
+          application/json: # Or application/x-www-form-urlencoded
+            schema:
+              type: object
+              properties:
+                b:
+                  type: string
+                  description: The string value for 'b'
+              required:
+                - b
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string # The response is the string 'b' itself
